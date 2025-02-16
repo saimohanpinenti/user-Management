@@ -39,6 +39,7 @@ public class UserRegistrationUtility {
 
     }
 
+
     public boolean emailValidator(String email){
         String emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$";
         return Pattern.matches(emailRegex, email);
