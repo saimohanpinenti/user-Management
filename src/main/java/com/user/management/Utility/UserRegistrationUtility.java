@@ -51,11 +51,30 @@ public class UserRegistrationUtility {
     }
 
     public void createNewUser(User user) {
-        user.setEmployeeId(latestEmployeeId++);;
-     this.users.add(user);
+        user.setEmployeeId(latestEmployeeId++);
+        this.users.add(user);
     }
 
-//    public double generateEmployeeId(){
-//        return
-//    }
+    public Object checkLoggedInUser(User user) {
+        for(User us: users){
+
+            if(us.getName().equals(user.getName()) && us.getPassword().equals(user.getPassword())){
+                return us;
+            }
+        }
+        return "Invalid Credentials";
+
+    }
+
+    public Object getDetails(User user){
+        if(user != null)
+        {
+            return user;
+        }
+        return  "";
+    }
+
+    public List<User> getAllUsers() {
+        return users;
+    }
 }

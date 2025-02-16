@@ -6,6 +6,8 @@ import com.user.management.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserManagementService {
 
@@ -25,5 +27,15 @@ public class UserManagementService {
         }
 
 
+    }
+
+    public Object userLogin(User user){
+
+        return userRegistrationUtility.checkLoggedInUser(user);
+    }
+
+    public List<User> getAllUser(){
+
+        return  userRegistrationUtility.getAllUsers();
     }
 }
